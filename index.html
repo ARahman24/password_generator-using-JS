@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Password Generator</title>
+</head>
+
+<body style="text-align: center;">
+  <h1>Password Generator</h1>
+	<h3>
+		Click on the button to
+		generate random password.
+	</h3>
+	
+	<button onclick="run()">
+		Click Here
+	</button>
+	<br>
+	
+	<div>
+		<p id="demo"></p>
+	</div>
+	
+	<script>
+
+		/* Function to generate combination of password */
+		function generateP() {
+			var pass = '';
+			var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+					'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+			
+			for (let i = 1; i <= 8; i++) {
+				var char = Math.floor(Math.random()	* str.length + 1);
+				
+				pass += str.charAt(char)
+			}
+			
+			return `Password is : ${pass}`;
+		}
+		
+		function run() {
+			document.getElementById("demo").innerHTML = generateP();
+		}
+	</script>
+</body>
+</html>
